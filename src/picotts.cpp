@@ -5,8 +5,6 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
-#include <sys/mman.h> // mmap
 
 #include "svoxpico/picoapi.h"
 #include "svoxpico/picoapid.h"

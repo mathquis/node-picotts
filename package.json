@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "node-gyp configure && node-gyp build",
-    "test": "node-gyp configure && node-gyp build && node lib/index.js"
+    "test": "node-gyp configure && node-gyp build && node test.js"
   },
   "repository": {
     "type": "git",

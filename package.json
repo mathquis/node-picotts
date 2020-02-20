@@ -25,10 +25,10 @@
     "url": "https://github.com/mathquis/node-picotts/issues"
   },
   "devDependencies": {
-    "node-addon-api": "^2.0.0",
     "wavefile": "^11.0.0"
   },
   "dependencies": {
+    "node-addon-api": "^2.0.0"
   },
   "homepage": "https://github.com/mathquis/node-picotts#readme"
 }

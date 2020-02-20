@@ -1,0 +1,34 @@
+{
+  "name": "@mathquis/node-picotts",
+  "version": "1.0.0",
+  "description": "TTS engine using SVOX PicoTTS",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "node-gyp configure && node-gyp build",
+    "test": "node-gyp configure && node-gyp build && node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathquis/node-picotts.git"
+  },
+  "keywords": [
+    "tts",
+    "picotts",
+    "svox",
+    "online",
+    "stream",
+    "node"
+  ],
+  "author": "Mathieu \"Fastjack\" Quisefit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathquis/node-picotts/issues"
+  },
+  "devDependencies": {
+    "node-addon-api": "^2.0.0",
+    "wavefile": "^11.0.0"
+  },
+  "dependencies": {
+  },
+  "homepage": "https://github.com/mathquis/node-picotts#readme"
+}

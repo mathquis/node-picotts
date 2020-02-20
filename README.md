@@ -1,5 +1,7 @@
 # node-picotts
 
+[![npm version](https://badge.fury.io/js/%40mathquis%2Fnode-picotts.svg)](https://badge.fury.io/js/%40mathquis%2Fnode-picotts)
+
 ## Usage
 
 ```javascript

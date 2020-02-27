@@ -1,7 +1,9 @@
 language: node_js
 node_js:
-  - 12
   - 13
+arch:
+  - amd64
+  - arm64
 compiler: gcc
 before_install:
   - sudo apt-get update -qq

@@ -1,6 +1,10 @@
 build
 lang
+lib/binding
+*.o
+*.lo
 node_modules
 README.md
 test.js
 .gitignore
+*.wav

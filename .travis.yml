@@ -37,7 +37,7 @@ deploy:
   provider: npm
   on:
     tags: true
-    condition: $TRAVIS_CPU_ARCH = amd64
+    condition: $TRAVIS_CPU_ARCH = amd64 AND $TRAVIS_OS_NAME = linux
   email: fastjack79@yahoo.com
   api_key:
     secure: B4hB4/0i8VaqgkwBSHufAjE3F5WOz6UzbwXF25a8nmpBPaDvLz/1rts0FRjo50cIUj8oHctLhR4ixIxwL2fSKm35iDfJgokrk/nxGeNtY78Nt097qQ1ppQkbPMNqgz1hpIhoiYWQzAfz5MttJKy4RkJT4oKiYsbSnfqmUfWHNol+jnV72FC6vPBbUwboiPbREdLQpFAH8uevDZi3gTqwQsUi2GRNIZ+lmh6X6acnUwL4OkDBslshUmRv88YrPjuKJOlDQ43PGodFmpkMzC0XuL+FkH84A98he4HSbJ5qf38rjUq8xPvk5eDYnXscBLle51XL4de6THF5hTKhC4jC3eaJzkC6LtGLTKjKWcVVXjzkBT+dpAEPiHqlWSsGiNKinyaA+BO11R957W2N07tfUry0uAyw5OEaHASa3Aca+Qzp/M/o5ZBHyWAC0YVzPFZq0IQtmPOF2lBCdssXVb6FKSXRj34mNDLt5Eq4ilcFIqANtZqF7gIJ5yMOjkcGwGDgWG7+xWnV+pTlnC67ZGucG9NivKwbr2KajxIUrucYKHYikwZWAvgXe6rT+WytR+IZjbQVvWclzb9XrjPA8nqt3FBeyAENoPHGgv72ZQleMDyiNDse/lVgWimnkOBXAUAl7JVIRIA3wKQ/QU+Qs22tvJVVtyLLE4+scHTP4fEL8N0=

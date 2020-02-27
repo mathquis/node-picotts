@@ -18,9 +18,9 @@ before_script:
   - node-pre-gyp clean
   - node-gyp clean
 script:
-  - $INSTALL_RESULT=0
+  - INSTALL_RESULT=0
   - if [[ $PUBLISH_BINARY == true ]]; then INSTALL_RESULT=$(npm install --falback-to-build=false > /dev/null)$? || true; fi;
-  - if [[ $INSTALL_RESULT != 0 ]]; then echo "returned $INSTALL_RESULT"; node-pre-gyp unpublish; false; fi;
+  - if [[ $INSTALL_RESULT != 0 ]]; then echo "returned $INSTALL_RESULT"; node-pre-gyp-github unpublish; false; fi;
   - node-pre-gyp clean
 after_success:
   - node-pre-gyp info

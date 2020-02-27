@@ -11,7 +11,6 @@ before_install:
   - PUBLISH_BINARY=false
   - if [[ $TRAVIS_BRANCH == `git describe --tags --always HEAD` ]]; then PUBLISH_BINARY=true; fi;
 install:
-  - npm install --build-from-source
   - node-pre-gyp configure build
 before_script:
   - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package; fi;

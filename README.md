@@ -2,7 +2,13 @@
 
 [![npm version](https://badge.fury.io/js/%40mathquis%2Fnode-picotts.svg)](https://badge.fury.io/js/%40mathquis%2Fnode-picotts)
 
-## Usage
+### Installation
+
+```bash
+npm i @mathquis/node-picotts
+```
+
+### Usage
 
 ```javascript
 const PicoTTS = require('node-picotts')

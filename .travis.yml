@@ -14,7 +14,7 @@ install:
   - npm install --build-from-source
   - node-pre-gyp configure build
 before_script:
-  - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package aa node-pre-gyp-github publish; fi;
+  - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package && node-pre-gyp-github publish; fi;
   - node-pre-gyp clean
   - node-gyp clean
 script:

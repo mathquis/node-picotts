@@ -11,7 +11,7 @@ jobs:
       arch: amd64
 compiler: gcc
 before_install:
-- sudo apt-get update -qq
+- if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get update -qq; fi;
 - export PATH=./node_modules/.bin/:$PATH
 - npm install node-gyp -g
 - npm install node-pre-gyp node-pre-gyp-github

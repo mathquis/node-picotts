@@ -11,7 +11,7 @@ before_install:
 - npm install node-gyp -g
 - npm install node-pre-gyp node-pre-gyp-github
 - PUBLISH_BINARY=true
-- if [[ $TRAVIS_TAG == "" ]]; then PUBLISH_BINARY=false; fi;
+- if [[ "$TRAVIS_TAG" == "" ]]; then PUBLISH_BINARY=false; fi;
 - echo "Publish binary = $PUBLISH_BINARY"
 install:
 - node-pre-gyp configure build

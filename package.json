@@ -3,9 +3,22 @@
   "version": "1.0.1",
   "description": "TTS engine using SVOX PicoTTS",
   "main": "lib/index.js",
+  "gypfile": true,
+  "binary": {
+    "module_name": "picotts",
+    "module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/mathquis/node-picotts/releases/download/",
+    "remote_path": "{version}"
+  },
   "scripts": {
-    "build": "node-gyp configure && node-gyp build",
-    "test": "node-gyp configure && node-gyp build && node test.js"
+    "preinstall": "npm install node-pre-gyp",
+    "install": "node-pre-gyp install --fallback-to-build",
+    "configure": "node-gyp configure",
+    "build": "npm run configure && node-gyp build && npm test",
+    "rebuild": "npm run configure && node-gyp rebuild && npm test",
+    "test": "node test.js",
+    "publish": "node-pre-gyp configure && node-pre-gyp build && node-pre-gyp package && node-pre-gyp-github publish --release"
   },
   "repository": {
     "type": "git",
@@ -25,6 +38,8 @@
     "url": "https://github.com/mathquis/node-picotts/issues"
   },
   "devDependencies": {
+    "node-pre-gyp": "^0.14.0",
+    "node-pre-gyp-github": "^1.4.3",
     "wavefile": "^11.0.0"
   },
   "dependencies": {

@@ -1,5 +1,6 @@
 # node-picotts
 
+[![Build Status](https://travis-ci.org/mathquis/node-picotts.svg?branch=master)](https://travis-ci.org/mathquis/node-picotts)
 [![npm version](https://badge.fury.io/js/%40mathquis%2Fnode-picotts.svg)](https://badge.fury.io/js/%40mathquis%2Fnode-picotts)
 
 ### Installation

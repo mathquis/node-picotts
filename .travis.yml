@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 12
+  - 13
+compiler: gcc
+before_install:
+  - sudo apt-get update -qq
+  - export PATH=./node_modules/.bin/:$PATH
+  - npm install node-gyp -g
+  - npm install node-pre-gyp node-pre-gyp-github
+  - PUBLISH_BINARY=false
+  - if [[ $TRAVIS_BRANCH == `git describe --tags --always HEAD` ]]; then PUBLISH_BINARY=true; fi;
+install:
+  - npm install --build-from-source
+  - node-pre-gyp configure build
+before_script:
+  - if [[ $PUBLISH_BINARY == true ]]; then node-pre-gyp package aa node-pre-gyp-github publish; fi;
+  - node-pre-gyp clean
+  - node-gyp clean
+script:
+  - $INSTALL_RESULT=0
+  - if [[ $PUBLISH_BINARY == true ]]; then INSTALL_RESULT=$(npm install --falback-to-build=false > /dev/null)$? || true; fi;
+  - if [[ $INSTALL_RESULT != 0 ]]; then echo "returned $INSTALL_RESULT"; node-pre-gyp unpublish; false; fi;
+  - node-pre-gyp clean
+after_success:
+  - node-pre-gyp info
+env:
+  global:
+    - secure: "evy85fdWAqd3pic8BklP/OGZbCCVM3x+D4e1m9JWYq/GXKoIf7331Z5llHUPXVtF60CZhcI2c5RzQ/PpECI3RK20gjoy9k8IEHiVGdgOOQa5IA9He7z7dy1/GZ1kTW2jvMi+2pa5S65cF7WJDo5mB7BW900BIsjYMntaySbIK36KcyILg48tbedj1kuMWbTnTdijfuFJLIESGseq9+iTHhUHYiF4tMhv13lVJMn2cND4uUL0KPMiXY+ggmN+UQAzhM0dN/gf9oYMryrIidhxWTxkTEI0sB6yrIsuGzeDjSiDOq0gh2Wruyt+xlwr9w5uD93EZrd8FeUDMEGF9ha7cps4B8B7nstHqqRRK3UT7U+bBw+wgsJYTQhRt7lO0r/DoJImMArNQmUxfRfe7CI3TcqVGUxiunZQmSliOueM0lkPpeYIL++IclJ4f7PI91DJa3lCZglT2yaXSJFeTwbLOhj9ocGZ0JiLn+H0esYOzhjFUrbZBnAsDGGG+xelePIE1g+kzH3ozkwm8x0MZU7M3mnKTmwPWycZSZkDb3zZeos5QvRVKDeMBtENJ9Us6n0/0i7+w6QO04V9IW4Jhbq/AbMa3nriqAYHalgIBCC9etQDfL8dhwDqQ8ynPoYKSpp8WZqouxp8Ludmpv9qs0avU3nq4cz2qE2DcCxnP6qAXjA="

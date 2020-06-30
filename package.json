@@ -14,9 +14,9 @@
   "scripts": {
     "preinstall": "npm install node-pre-gyp",
     "install": "node-pre-gyp install --fallback-to-build",
-    "configure": "node-gyp configure",
-    "build": "npm run configure && node-gyp build && npm test",
-    "rebuild": "npm run configure && node-gyp rebuild && npm test",
+    "configure": "node-pre-gyp configure",
+    "build": "npm run configure && node-pre-gyp build && npm test",
+    "rebuild": "npm run configure && node-pre-gyp rebuild && npm test",
     "test": "node test.js",
     "publish": "node-pre-gyp configure && node-pre-gyp build && node-pre-gyp package && node-pre-gyp-github publish --release"
   },
@@ -45,8 +45,8 @@
     "wavefile": "^11.0.0"
   },
   "dependencies": {
-    "node-pre-gyp": "^0.14.0",
-    "node-addon-api": "^2.0.0"
+    "node-addon-api": "^2.0.0",
+    "node-pre-gyp": "^0.14.0"
   },
   "homepage": "https://github.com/mathquis/node-picotts#readme"
 }

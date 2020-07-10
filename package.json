@@ -1,6 +1,6 @@
 {
   "name": "@mathquis/node-picotts",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "TTS engine using SVOX PicoTTS",
   "main": "lib/index.js",
   "gypfile": true,

@@ -437,7 +437,7 @@ Napi::Value SvoxPicoTTS::speak(const Napi::CallbackInfo& info) {
                     	info.This(),
                     	{
                     		Napi::String::New(env, "data"),
-                    		Napi::Buffer<int8_t>::New(env, (int8_t *)pcm_buffer, bufused),
+                    		Napi::Buffer<int8_t>::Copy(env, (int8_t *)pcm_buffer, bufused),
             				Napi::Boolean::New(env, false)
                     	}
                     );
@@ -459,7 +459,7 @@ Napi::Value SvoxPicoTTS::speak(const Napi::CallbackInfo& info) {
             	info.This(),
             	{
             		Napi::String::New(env, "data"),
-            		Napi::Buffer<int8_t>::New(env, (int8_t *)pcm_buffer, bufused),
+            		Napi::Buffer<int8_t>::Copy(env, (int8_t *)pcm_buffer, bufused),
             		Napi::Boolean::New(env, true)
             	}
             );

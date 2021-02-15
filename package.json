@@ -41,8 +41,8 @@
     "url": "https://github.com/mathquis/node-picotts/issues"
   },
   "devDependencies": {
-    "node-pre-gyp-github": "^1.4.3",
-    "wavefile": "^11.0.0"
+    "wavefile": "^11.0.0",
+    "@mathquis/node-pre-gyp-github": "^1.0.0"
   },
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.0",

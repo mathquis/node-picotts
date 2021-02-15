@@ -18,7 +18,7 @@
     "build": "npm run configure && node-pre-gyp build && npm test",
     "rebuild": "npm run configure && node-pre-gyp rebuild && npm test",
     "test": "node test.js",
-    "publish": "node-pre-gyp configure && node-pre-gyp build && node-pre-gyp package && node-pre-gyp-github publish --release"
+    "release": "node-pre-gyp configure && node-pre-gyp build && node-pre-gyp package && node-pre-gyp-github publish --release"
   },
   "publishConfig": {
     "access": "public"

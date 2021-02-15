@@ -12,7 +12,7 @@
     "remote_path": "{version}"
   },
   "scripts": {
-    "preinstall": "npm install node-pre-gyp",
+    "preinstall": "npm install @mapbox/node-pre-gyp",
     "install": "node-pre-gyp install --fallback-to-build",
     "configure": "node-pre-gyp configure",
     "build": "npm run configure && node-pre-gyp build && npm test",
@@ -45,8 +45,8 @@
     "wavefile": "^11.0.0"
   },
   "dependencies": {
-    "node-addon-api": "^2.0.0",
-    "node-pre-gyp": "^0.14.0"
+    "@mapbox/node-pre-gyp": "^1.0.0",
+    "node-addon-api": "^3.1.0"
   },
   "homepage": "https://github.com/mathquis/node-picotts#readme"
 }
